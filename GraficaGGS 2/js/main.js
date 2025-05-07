@@ -466,12 +466,12 @@ img4.onload = function () {
   ctx4.font = "bold 30px Arial";
   ctx4.fillStyle = "black";
 
-  ctx4.fillText(nome, 200, 300);
-  ctx4.fillText(cpf, 200, 350);
+  ctx4.fillText(nome, 208, 358);
+  ctx4.fillText(cpf, 280, 428);
   ctx4.fillText(rg, 200, 400);
-  ctx4.fillText(especialidade, 200, 450);
-  ctx4.fillText("Belo Horizonte", 200, 500);
-  ctx4.fillText(`${dia} de ${mes} de ${ano}`, 200, 550);
+  ctx4.fillText(especialidade, 200, 564);
+  ctx4.fillText("Belo Horizonte", 446, 1710);
+  ctx4.fillText(`${dia} de ${mes} de ${ano}`, 671, 774);
 
   const { jsPDF } = window.jspdf;
   const doc4 = new jsPDF({

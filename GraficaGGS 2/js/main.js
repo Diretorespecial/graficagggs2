@@ -467,20 +467,21 @@ img4.onload = function () {
   ctx4.fillStyle = "black";
 
   // Texto principal
-  ctx4.fillText(nome, 110, 160);
-  ctx4.fillText(cpf, 130, 200);
+  ctx4.fillText(nome, 208, 358);
+  ctx4.fillText(cpf, 280, 428);
   ctx4.fillText(rg, 460, 200);
-  ctx4.fillText(especialidade, 335, 240);
+  ctx4.fillText(especialidade, 200, 564);
 
   // Endereço comercial
   let enderecoCompleto = `${endereco}, ${numero} - ${complemento} - ${bairro} - ${cidade} - ${cep}`;
   ctx4.font = "22px Arial";
-  ctx4.fillText(enderecoCompleto, 110, 285);
+  ctx4.fillText(enderecoCompleto, 152, 636);
 
   // Cidade fixa e data
   ctx4.font = "22px Arial";
-  ctx4.fillText("Belo Horizonte", 110, 710);
-  ctx4.fillText(`${dia}/${mes}/${ano}`, 410, 710);
+  ctx4.fillText("Belo Horizonte", 446, 1710);
+  ctx4.fillText(`${dia}/${mes}/${ano}`, 671, 774);
+  ctx4.fillText(`${dia}/${mes}/${ano}`, 1011, 1712);
 
   const { jsPDF } = window.jspdf;
   const doc4 = new jsPDF({

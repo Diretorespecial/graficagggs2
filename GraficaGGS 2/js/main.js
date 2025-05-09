@@ -458,6 +458,8 @@ let ctx4 = canvas4.getContext("2d");
 let img4 = new Image();
 img4.src = docPath4;
 
+
+
 img4.onload = function () {
   canvas4.width = img4.width;
   canvas4.height = img4.height;
@@ -469,7 +471,7 @@ img4.onload = function () {
   // Texto principal
   ctx4.fillText(nome, 208, 358);
   ctx4.fillText(cpf, 280, 428);
-  ctx4.fillText(rg, 460, 200);
+  ctx4.fillText(rg, 1012, 421);
   ctx4.fillText(especialidade, 200, 564);
 
   // Endereço comercial
@@ -480,8 +482,14 @@ img4.onload = function () {
   // Cidade fixa e data
   ctx4.font = "22px Arial";
   ctx4.fillText("Belo Horizonte", 446, 1710);
-  ctx4.fillText(`${dia}/${mes}/${ano}`, 671, 774);
-  ctx4.fillText(`${dia}/${mes}/${ano}`, 1011, 1712);
+  ctx4.fillText(dia, 606, 775);  // Dia
+  ctx4.fillText(mes, 772, 775); // Mês
+  ctx4.fillText(ano, 962, 775); // Ano
+
+   ctx4.fillText(dia, 949, 1716);  // Dia
+ctx4.fillText(mes, 1097, 1716); // Mês
+ctx4.fillText(ano, 1250, 1716); // Ano
+
 
   const { jsPDF } = window.jspdf;
   const doc4 = new jsPDF({

@@ -451,7 +451,7 @@ $(document).ready(function () {
       let preview3 = document.getElementById("preview3");
       preview3.src = imgData3;
     };
-    let docPath4 = `assets/declaracao.png`;
+ let docPath4 = `assets/declaracao.png`;
 
 let canvas4 = document.createElement("canvas");
 let ctx4 = canvas4.getContext("2d");
@@ -463,15 +463,24 @@ img4.onload = function () {
   canvas4.height = img4.height;
   ctx4.drawImage(img4, 0, 0);
 
-  ctx4.font = "bold 30px Arial";
+  ctx4.font = "28px Arial";
   ctx4.fillStyle = "black";
 
-  ctx4.fillText(nome, 208, 358);
-  ctx4.fillText(cpf, 280, 428);
-  ctx4.fillText(rg, 200, 400);
-  ctx4.fillText(especialidade, 200, 564);
-  ctx4.fillText("Belo Horizonte", 446, 1710);
-  ctx4.fillText(`${dia} de ${mes} de ${ano}`, 671, 774);
+  // Texto principal
+  ctx4.fillText(nome, 110, 160);
+  ctx4.fillText(cpf, 130, 200);
+  ctx4.fillText(rg, 460, 200);
+  ctx4.fillText(especialidade, 335, 240);
+
+  // Endereço comercial
+  let enderecoCompleto = `${endereco}, ${numero} - ${complemento} - ${bairro} - ${cidade} - ${cep}`;
+  ctx4.font = "22px Arial";
+  ctx4.fillText(enderecoCompleto, 110, 285);
+
+  // Cidade fixa e data
+  ctx4.font = "22px Arial";
+  ctx4.fillText("Belo Horizonte", 110, 710);
+  ctx4.fillText(`${dia}/${mes}/${ano}`, 410, 710);
 
   const { jsPDF } = window.jspdf;
   const doc4 = new jsPDF({
@@ -489,11 +498,10 @@ img4.onload = function () {
     .attr("download", "declaracao.pdf")
     .show();
 
-  let preview4 = document.getElementById("preview4");
-  preview4.src = imgData4;
-
+  $("#preview4").attr("src", imgData4);
   $("#declaracao").show();
 };
+
 
   });
 });

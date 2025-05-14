@@ -100,10 +100,9 @@ $(document).ready(function () {
   $("#fisica").click(function () {
     $("#avisoP").html(
       `
-      ● Procuração e Requisição (ambos gerados aqui) assinados no <a href="https://gov.br" target="_blank">gov.br</a>  <br>
-      ● CRM frente e verso.<br>
-      ● Comprovante de endereço de atendimento em nome do médico (a Secretaria de Saúde aceita apenas contas de água, luz ou telefone) com até 90 dias de emissão.  
-      <span> <br>Caso o comprovante não esteja no nome do médico, é necessário enviar junto uma declaração de próprio punho informando o endereço, acompanhada da identidade de um parente ou cônjuge, declarando residência conjunta.</span> <br>
+      ● Procuração, Requisição e Declaração (ambos gerados aqui) assinados no <a href="https://gov.br" target="_blank">gov.br</a>  <br>
+            ● CRM frente e verso.<br>
+            ● Declaração ou comprovante de endereço de atendimento em nome do médico (a Secretaria de Saúde aceita apenas contas de água, luz ou telefone) com até 90 dias de emissão.</span> <br>
       `
     );
     
@@ -123,8 +122,6 @@ $(document).ready(function () {
       `
       ● Procuração e Requisição (ambos gerados aqui) assinados no <a href="https://gov.br" target="_blank">gov.br</a>  <br>
       ● CRM frente e verso.<br>
-      ● Comprovante de endereço de atendimento em nome do médico (a Secretaria de Saúde aceita apenas contas de água, luz ou telefone) com até 90 dias de emissão.  
-      <span> <br>Caso o comprovante não esteja no nome do médico, é necessário enviar junto uma declaração de próprio punho informando o endereço, acompanhada da identidade de um parente ou cônjuge, declarando residência conjunta.</span> <br>
       <b> ● Cartão CNPJ. -- adicional para pessoa jurídica<br> 
       ● Certificado de regularidade.  -- adicional para pessoa jurídica<br> </b>
       `
@@ -282,6 +279,8 @@ $(document).ready(function () {
 
       let preview = document.getElementById("preview");
       preview.src = imgData;
+      $("#previa").removeClass("hidden").fadeIn(300);
+
     };
 
     let docPath2 = `assets/procuracao.png`;

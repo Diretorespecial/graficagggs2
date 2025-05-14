@@ -415,7 +415,7 @@ $(document).ready(function () {
           $("#valor").val("R$100,00");
 
           //esconde o id requisicao
-          $("#previa").hide();
+          $("#previa").removeClass("hidden").fadeIn(300);
           break;
       }
 

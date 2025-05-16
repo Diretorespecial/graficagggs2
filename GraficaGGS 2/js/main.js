@@ -305,7 +305,7 @@ img2.onload = function () {
 ctx2.fillText(nome, 390, 460);
 ctx2.fillText(rg, 430, 510);
 ctx2.fillText(cpf, 400, 555);
-ctx2.fillText(`${endereco}, ${bairro}, ${cidade}`, 360, 610);
+ctx2.fillText(`${endereco}, ${complemento}, ${bairro}, ${cidade}`, 360, 610);
 ctx2.fillText(cidade, 650, 660);
 ctx2.fillText("MG", 250, 710);
 

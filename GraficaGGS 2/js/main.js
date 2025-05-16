@@ -301,17 +301,19 @@ img2.onload = function () {
   ctx2.fillStyle = "black";
 
   if (docType === "tipo_amarelo") {
-    // Coordenadas ajustadas para o modelo procuracao_a.png
-    ctx2.fillText(nome, 460, 450);         // Nome
-    ctx2.fillText(cpf, 460, 510);          // CPF
-    ctx2.fillText(rg, 460, 570);           // RG
-    ctx2.fillText(endereco, 460, 630);     // Endereço
-    ctx2.fillText(bairro, 460, 690);       // Bairro
-    ctx2.fillText(cidade, 460, 750);       // Cidade
-    ctx2.fillText("MG", 460, 810);         // Estado fixo
-    ctx2.fillText(dia, 670, 1140);         // Dia
-    ctx2.fillText(mes, 770, 1140);         // Mês
-    ctx2.fillText(ano, 880, 1140);         // Ano
+    // Dados principais
+ctx2.fillText(nome, 390, 460);
+ctx2.fillText(rg, 430, 510);
+ctx2.fillText(cpf, 400, 555);
+ctx2.fillText(`${endereco}, ${bairro}, ${cidade}`, 360, 610);
+ctx2.fillText(cidade, 650, 660);
+ctx2.fillText("MG", 250, 710);
+
+// Data final da assinatura
+ctx2.fillText(cidade, 280, 1035);
+ctx2.fillText(dia, 500, 1035);
+ctx2.fillText(mes, 650, 1035);
+ctx2.fillText(ano, 820, 1035);
   } else {
     // Layout padrão
     ctx2.fillText(nome, 550, 433);

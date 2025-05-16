@@ -303,6 +303,7 @@ img2.onload = function () {
   if (docType === "tipo_amarelo") {
      
         ctx2.font = "bold 35px Arial";
+        ctx2.fillText(nome, 650, 820);
         ctx2.fillText(rg, 1000, 900);
         ctx2.fillText(cpf, 100, 980);
         ctx2.font = "bold 35px Arial";

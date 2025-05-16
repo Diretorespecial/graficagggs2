@@ -416,10 +416,14 @@ img2.onload = function () {
           ctx3.fillText("X", 172, 1593);
 
           break;
-        case "tipo_amarelo":
+                case "tipo_amarelo":
           $("#qtd").val("1");
           $("#valor").val("R$100,00");
-         $("#previa").removeClass("hidden").fadeIn(300);
+
+          //esconde o id requisicao
+          $("#previa").show();
+          $("#requisicao").hide();
+          break;
 
       }
 

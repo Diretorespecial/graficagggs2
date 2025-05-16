@@ -301,31 +301,23 @@ img2.onload = function () {
   ctx2.fillStyle = "black";
 
   if (docType === "tipo_amarelo") {
-    // Dados principais
-ctx2.fillText(nome, 390, 460);
-ctx2.fillText(rg, 430, 510);
-ctx2.fillText(cpf, 400, 555);
-ctx2.fillText(`${endereco}, ${complemento}, ${bairro}, ${cidade}`, 360, 610);
-ctx2.fillText(cidade, 650, 660);
-ctx2.fillText("MG", 250, 710);
-
-// Data final da assinatura
-ctx2.fillText(cidade, 280, 1035);
-ctx2.fillText(dia, 500, 1035);
-ctx2.fillText(mes, 650, 1035);
-ctx2.fillText(ano, 820, 1035);
-  } else {
-    // Layout padrão
-    ctx2.fillText(nome, 550, 433);
-    ctx2.fillText(rg, 680, 492);
-    ctx2.fillText(cpf, 100, 552);
-    ctx2.font = "bold 30px Arial";
-    ctx2.fillText(endereco, 100, 592);
-    ctx2.fillText(bairro, 100, 667);
-    ctx2.fillText(cidade, 800, 667);
-    ctx2.fillText("MG", 1450, 667);
-    ctx2.fillText(dia, 1025, 1097);
-    ctx2.fillText(mes, 1200, 1097);
+     
+        ctx2.font = "bold 35px Arial";
+        ctx2.fillText(rg, 1000, 900);
+        ctx2.fillText(cpf, 100, 980);
+        ctx2.font = "bold 35px Arial";
+        ctx2.fillText(endereco, 100, 1090);
+        ctx2.fillText(cidade, 1700, 1090);
+        ctx2.fillText("MG", 300, 1190);
+        ctx2.fillText(dia, 1680, 1840);
+        ctx2.fillText(mes, 1870, 1840);
+        ctx2.fillText(cidade, 1200, 1840);
+        ctx2.font = "43px Arial";
+        ctx2.fillText(ano, 2200, 1843);
+        // ctx2.fillText(bairro, 100, 730);
+        // ctx2.fillText(endereco, 100, 665);
+        // ctx2.fillText(endereco, 100, 665);
+        // ctx2.fillText(telefone, 1750, 350);
   }
 
   const { jsPDF } = window.jspdf;
@@ -426,10 +418,8 @@ ctx2.fillText(ano, 820, 1035);
         case "tipo_amarelo":
           $("#qtd").val("1");
           $("#valor").val("R$100,00");
+         $("#previa").removeClass("hidden").fadeIn(300);
 
-          //esconde o id requisicao
-          $("#previa").removeClass("hidden").fadeIn(300);
-          break;
       }
 
   

@@ -283,57 +283,68 @@ $(document).ready(function () {
 
     };
 
-    let docPath2 = `assets/procuracao.png`;
+let docPath2 = docType === "tipo_amarelo"
+  ? "assets/procuracao_a.png"
+  : "assets/procuracao.png";
 
-    let canvas2 = document.createElement("canvas");
-    let ctx2 = canvas2.getContext("2d");
-    let img2 = new Image();
-    img2.src = docPath2;
+let canvas2 = document.createElement("canvas");
+let ctx2 = canvas2.getContext("2d");
+let img2 = new Image();
+img2.src = docPath2;
 
-    img2.onload = function () {
-      canvas2.width = img2.width;
-      canvas2.height = img2.height;
-      ctx2.drawImage(img2, 0, 0);
+img2.onload = function () {
+  canvas2.width = img2.width;
+  canvas2.height = img2.height;
+  ctx2.drawImage(img2, 0, 0);
 
-      ctx2.font = "bold 40px Arial";
-      ctx2.fillStyle = "black";
+  ctx2.font = "bold 35px Arial";
+  ctx2.fillStyle = "black";
 
-      ctx2.fillText(nome, 550, 500);
+  if (docType === "tipo_amarelo") {
+    // Coordenadas ajustadas para o modelo procuracao_a.png
+    ctx2.fillText(nome, 460, 450);         // Nome
+    ctx2.fillText(cpf, 460, 510);          // CPF
+    ctx2.fillText(rg, 460, 570);           // RG
+    ctx2.fillText(endereco, 460, 630);     // Endereço
+    ctx2.fillText(bairro, 460, 690);       // Bairro
+    ctx2.fillText(cidade, 460, 750);       // Cidade
+    ctx2.fillText("MG", 460, 810);         // Estado fixo
+    ctx2.fillText(dia, 670, 1140);         // Dia
+    ctx2.fillText(mes, 770, 1140);         // Mês
+    ctx2.fillText(ano, 880, 1140);         // Ano
+  } else {
+    // Layout padrão
+    ctx2.fillText(nome, 550, 433);
+    ctx2.fillText(rg, 680, 492);
+    ctx2.fillText(cpf, 100, 552);
+    ctx2.font = "bold 30px Arial";
+    ctx2.fillText(endereco, 100, 592);
+    ctx2.fillText(bairro, 100, 667);
+    ctx2.fillText(cidade, 800, 667);
+    ctx2.fillText("MG", 1450, 667);
+    ctx2.fillText(dia, 1025, 1097);
+    ctx2.fillText(mes, 1200, 1097);
+  }
 
-      ctx2.font = "bold 35px Arial";
-      ctx2.fillText(rg, 680, 555);
-      ctx2.fillText(cpf, 100, 615);
-      ctx2.font = "bold 30px Arial";
-      ctx2.fillText(endereco, 100, 665);
-      ctx2.fillText(bairro, 100, 730);
-      ctx2.fillText(endereco, 100, 665);
-      ctx2.fillText(cidade, 800, 730);
-      ctx2.fillText(endereco, 100, 665);
-      ctx2.fillText(dia, 1025, 1160);
-      ctx2.fillText(mes, 1200, 1160);
-      ctx2.fillText(ano, 1500, 1160);
-      ctx2.fillText("MG", 1450, 730);
-      ctx2.fillText(telefone, 1750, 350);
+  const { jsPDF } = window.jspdf;
+  const doc2 = new jsPDF({
+    orientation: "portrait",
+    unit: "mm",
+    format: [210, 297],
+  });
 
-      const { jsPDF } = window.jspdf;
-      const doc2 = new jsPDF({
-        orientation: "portrait",
-        unit: "mm",
-        format: [210, 297],
-      });
+  let imgData2 = canvas2.toDataURL("image/png");
 
-      let imgData2 = canvas2.toDataURL("image/png");
+  doc2.addImage(imgData2, "PNG", 0, 0, 210, 297);
 
-      doc2.addImage(imgData2, "PNG", 0, 0, 210, 297);
+  $("#downloadBtn2")
+    .attr("href", doc2.output("bloburl"))
+    .attr("download", "procuracao.pdf")
+    .show();
 
-      $("#downloadBtn2")
-        .attr("href", doc2.output("bloburl"))
-        .attr("download", "procuracao.pdf")
-        .show();
+  $("#preview2").attr("src", imgData2);
+};
 
-      let preview2 = document.getElementById("preview2");
-      preview2.src = imgData2;
-    };
 
     let docPath3 = `assets/requisicao.png`;
 

@@ -283,27 +283,26 @@ $(document).ready(function () {
 
     };
 
-let docPath2 = docType === "tipo_amarelo"
-  ? "assets/procuracao_a.png"
-  : "assets/procuracao.png";
+if (docType == "tipo_amarelo") {
+      let docPath2 = `assets/procuracao_a.png`;
 
-let canvas2 = document.createElement("canvas");
-let ctx2 = canvas2.getContext("2d");
-let img2 = new Image();
-img2.src = docPath2;
+      let canvas2 = document.createElement("canvas");
+      let ctx2 = canvas2.getContext("2d");
+      let img2 = new Image();
+      img2.src = docPath2;
 
-img2.onload = function () {
-  canvas2.width = img2.width;
-  canvas2.height = img2.height;
-  ctx2.drawImage(img2, 0, 0);
+      img2.onload = function () {
+        canvas2.width = img2.width;
+        canvas2.height = img2.height;
+        ctx2.drawImage(img2, 0, 0);
 
-  ctx2.font = "bold 35px Arial";
-  ctx2.fillStyle = "black";
+        ctx2.font = "bold 40px Arial";
+        ctx2.fillStyle = "black";
 
-  if (docType === "tipo_amarelo") {
-     
-        ctx2.font = "bold 35px Arial";
+        // Adiciona os dados no canvas
         ctx2.fillText(nome, 650, 820);
+
+        ctx2.font = "bold 35px Arial";
         ctx2.fillText(rg, 1000, 900);
         ctx2.fillText(cpf, 100, 980);
         ctx2.font = "bold 35px Arial";
@@ -319,28 +318,80 @@ img2.onload = function () {
         // ctx2.fillText(endereco, 100, 665);
         // ctx2.fillText(endereco, 100, 665);
         // ctx2.fillText(telefone, 1750, 350);
-  }
 
-  const { jsPDF } = window.jspdf;
-  const doc2 = new jsPDF({
-    orientation: "portrait",
-    unit: "mm",
-    format: [210, 297],
-  });
+        const { jsPDF } = window.jspdf;
+        const doc2 = new jsPDF({
+          orientation: "portrait",
+          unit: "mm",
+          format: [210, 297],
+        });
 
-  let imgData2 = canvas2.toDataURL("image/png");
+        let imgData2 = canvas2.toDataURL("image/png");
 
-  doc2.addImage(imgData2, "PNG", 0, 0, 210, 297);
+        doc2.addImage(imgData2, "PNG", 0, 0, 210, 297);
 
-  $("#downloadBtn2")
-    .attr("href", doc2.output("bloburl"))
-    .attr("download", "procuracao.pdf")
-    .show();
+        $("#downloadBtn2")
+          .attr("href", doc2.output("bloburl"))
+          .attr("download", "procuracao.pdf")
+          .show();
 
-  $("#preview2").attr("src", imgData2);
-  $("#preview2").removeClass("hidden").fadeIn(300);
+        let preview2 = document.getElementById("preview2");
+        preview2.src = imgData2;
+      };
+    } else {
+      let docPath2 = `assets/procuracao.png`;
 
-};
+      let canvas2 = document.createElement("canvas");
+      let ctx2 = canvas2.getContext("2d");
+      let img2 = new Image();
+      img2.src = docPath2;
+
+      img2.onload = function () {
+        canvas2.width = img2.width;
+        canvas2.height = img2.height;
+        ctx2.drawImage(img2, 0, 0);
+
+        ctx2.font = "bold 40px Arial";
+        ctx2.fillStyle = "black";
+
+        // Adiciona os dados no canvas
+        ctx2.fillText(nome, 550, 500);
+
+        ctx2.font = "bold 35px Arial";
+        ctx2.fillText(rg, 680, 555);
+        ctx2.fillText(cpf, 100, 615);
+        ctx2.font = "bold 30px Arial";
+        ctx2.fillText(endereco, 100, 665);
+        ctx2.fillText(bairro, 100, 730);
+        ctx2.fillText(endereco, 100, 665);
+        ctx2.fillText(cidade, 800, 730);
+        ctx2.fillText(endereco, 100, 665);
+        ctx2.fillText(dia, 1025, 1160);
+        ctx2.fillText(mes, 1200, 1160);
+        ctx2.fillText(ano, 1500, 1160);
+        ctx2.fillText("MG", 1450, 730);
+        ctx2.fillText(telefone, 1750, 350);
+
+        const { jsPDF } = window.jspdf;
+        const doc2 = new jsPDF({
+          orientation: "portrait",
+          unit: "mm",
+          format: [210, 297],
+        });
+
+        let imgData2 = canvas2.toDataURL("image/png");
+
+        doc2.addImage(imgData2, "PNG", 0, 0, 210, 297);
+
+        $("#downloadBtn2")
+          .attr("href", doc2.output("bloburl"))
+          .attr("download", "procuracao.pdf")
+          .show();
+
+        let preview2 = document.getElementById("preview2");
+        preview2.src = imgData2;
+      };
+    }
 
 
     let docPath3 = `assets/requisicao.png`;

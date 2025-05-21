@@ -358,19 +358,19 @@ if (docType == "tipo_amarelo") {
         ctx2.fillText(nome, 550, 500);
 
         ctx2.font = "bold 35px Arial";
-        ctx2.fillText(rg, 680, 555);
-        ctx2.fillText(cpf, 100, 615);
+        ctx2.fillText(rg, 680, 505);
+        ctx2.fillText(cpf, 100, 565);
         ctx2.font = "bold 30px Arial";
-        ctx2.fillText(endereco, 100, 665);
-        ctx2.fillText(bairro, 100, 730);
-        ctx2.fillText(endereco, 100, 665);
-        ctx2.fillText(cidade, 800, 730);
-        ctx2.fillText(endereco, 100, 665);
-        ctx2.fillText(dia, 1025, 1160);
-        ctx2.fillText(mes, 1200, 1160);
-        ctx2.fillText(ano, 1500, 1160);
-        ctx2.fillText("MG", 1450, 730);
-        ctx2.fillText(telefone, 1750, 350);
+        ctx2.fillText(endereco, 100, 615);
+        ctx2.fillText(bairro, 100, 680);
+        ctx2.fillText(endereco, 100, 615);
+        ctx2.fillText(cidade, 800, 680);
+        ctx2.fillText(endereco, 100, 615);
+        ctx2.fillText(dia, 1025, 1010);
+        ctx2.fillText(mes, 1200, 1010);
+        ctx2.fillText(ano, 1500, 1010);
+        ctx2.fillText("MG", 1450, 680);
+        ctx2.fillText(telefone, 1750, 300);
 
         const { jsPDF } = window.jspdf;
         const doc2 = new jsPDF({

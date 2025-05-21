@@ -338,6 +338,8 @@ img2.onload = function () {
     .show();
 
   $("#preview2").attr("src", imgData2);
+  $("#preview2").removeClass("hidden").fadeIn(300);
+
 };
 
 

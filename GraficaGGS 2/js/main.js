@@ -223,7 +223,7 @@ $(document).ready(function () {
       numero = "123";
       cpf = "123.456.789-00";
       data = "2023-10-01";
-      docType = "tipo_b";
+      // docType = "tipo_amarelo";
       docPath = `assets/${docType}.png`;
     }
 
@@ -282,8 +282,6 @@ $(document).ready(function () {
 
       let preview = document.getElementById("preview");
       preview.src = imgData;
-      $("#previa").removeClass("hidden").fadeIn(300);
-
     };
 
 if (docType == "tipo_amarelo") {

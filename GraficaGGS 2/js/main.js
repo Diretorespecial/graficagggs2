@@ -172,11 +172,13 @@ $(document).ready(function () {
       complemento,
       nomesocial,
       cpf;
+      rua;
 
     if ($("#fisica").hasClass("inactive")) {
       nome = $("#razaoSocial").val();
       crm = $("#crmPJ").val();
       especialidade = $("#especialidadePJ").val();
+      rua = $("#rua").val();
       endereco = $("#enderecoPJ").val();
       telefone = $("#telefonePJ").val();
       bairro = $("#bairro_pj").val();
@@ -189,6 +191,7 @@ $(document).ready(function () {
       nomesocial = $("#razaoSocial").val();
       data = $("#data_pj").val();
     } else {
+      rua = $("#rua").val();
       nome = $("#nameform").val();
       crm = $("#crm").val();
       especialidade = $("#especialidade").val();
@@ -355,7 +358,7 @@ if (docType == "tipo_amarelo") {
         ctx2.fillStyle = "black";
 
         // Adiciona os dados no canvas
-        ctx2.fillText(nome, 550, 500);
+        ctx2.fillText(nome, 550, 450);
 
         ctx2.font = "bold 35px Arial";
         ctx2.fillText(rg, 680, 505);
@@ -416,6 +419,7 @@ if (docType == "tipo_amarelo") {
         ctx3.fillText(crm, 200, 490);
         ctx3.fillText(especialidade, 500, 490);
         ctx3.fillText(telefone, 1100, 490);
+        ctx3.fillText(rua, 200, 560);
         ctx3.fillText(endereco, 200, 560);
         ctx3.fillText(numero, 1100, 560);
         ctx3.fillText(complemento, 1300, 560);
@@ -428,6 +432,7 @@ if (docType == "tipo_amarelo") {
         ctx3.fillText(crm, 200, 955);
         ctx3.fillText(especialidade, 500, 955);
         ctx3.fillText(telefone, 1100, 955);
+        ctx3.fillText(rua, 200, 815);
         ctx3.fillText(endereco, 200, 815);
         ctx3.fillText(numero, 1100, 815);
         ctx3.fillText(complemento, 1300, 815);

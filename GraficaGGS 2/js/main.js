@@ -420,7 +420,6 @@ if (docType == "tipo_amarelo") {
         ctx3.fillText(especialidade, 500, 490);
         ctx3.fillText(telefone, 1100, 490);
         ctx3.fillText(rua, 200, 560);
-        ctx3.fillText(endereco, 200, 560);
         ctx3.fillText(numero, 1100, 560);
         ctx3.fillText(complemento, 1300, 560);
         ctx3.fillText(cidade, 200, 630);
@@ -433,7 +432,6 @@ if (docType == "tipo_amarelo") {
         ctx3.fillText(especialidade, 500, 955);
         ctx3.fillText(telefone, 1100, 955);
         ctx3.fillText(rua, 200, 815);
-        ctx3.fillText(endereco, 200, 815);
         ctx3.fillText(numero, 1100, 815);
         ctx3.fillText(complemento, 1300, 815);
         ctx3.fillText(cidade, 200, 890);

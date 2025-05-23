@@ -369,9 +369,8 @@ if (docType == "tipo_amarelo") {
         ctx2.fillText(endereco, 100, 615);
         ctx2.fillText(cidade, 800, 680);
         ctx2.fillText(endereco, 100, 615);
-        ctx2.fillText(dia, 1025, 1010);
-        ctx2.fillText(mes, 1200, 1010);
-        ctx2.fillText(ano, 1500, 1010);
+        ctx2.fillText(dia, 1025, 1100);
+        ctx2.fillText(mes, 1200, 1100);
         ctx2.fillText("MG", 1450, 680);
         ctx2.fillText(telefone, 1750, 300);
 

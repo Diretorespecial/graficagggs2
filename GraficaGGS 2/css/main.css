@@ -18,8 +18,8 @@ body {
 }
 
 form {
-  width: 600px;
-  max-width: 300px;
+  width: 90%;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   margin: 100px auto;
@@ -98,9 +98,10 @@ label.light {
   display: inline;
 }
 
-.conatiner {
+.container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .radioDiv {
@@ -247,7 +248,8 @@ label.light {
   text-align: center !important;
   max-width: 300px;
   margin-left: 0px !important;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   display: flex;
   height: 720px;
   overflow: hidden;
@@ -345,10 +347,13 @@ label span {
     margin-top: 20px !important;
   }
   .conatiner {
+    .container {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
+    align-items: flex-start;
   }
+}
   #avisos {
     height: 380px;
     max-width: none;

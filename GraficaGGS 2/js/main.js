@@ -154,7 +154,33 @@ $(document).ready(function () {
     $(".results").removeClass("hidden");
     $(".result").removeClass("hidden");
 
+    
     let docType = $("input[name='receituario']:checked").val();
+$("#requisicao").hide(); // Sempre esconde a Requisição inicialmente
+
+switch (docType) {
+  case "tipo_b2":
+    $("#requisicao").show();
+    ctx3.fillText("X", 172, 1463);
+    break;
+
+  case "tipo_b":
+    $("#requisicao").show();
+    ctx3.fillText("X", 172, 1328);
+    break;
+
+  case "retinoides":
+    $("#requisicao").show();
+    ctx3.fillText("X", 172, 1593);
+    break;
+
+  case "tipo_amarelo":
+    $("#qtd").val("1");
+    $("#valor").val("R$100,00");
+    $("#previa").removeClass("hidden").fadeIn(300);
+    break;
+}
+
     let docPath = `assets/${docType}.png`;
 
     var nome,

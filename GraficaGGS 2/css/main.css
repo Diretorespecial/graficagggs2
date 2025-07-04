@@ -1,119 +1,196 @@
-*,
-*:before,
-*:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+*, *:before, *:after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   font-family: "Nunito", sans-serif;
   background: linear-gradient(to bottom, #ffffff, #d6d6d6);
-  flex-direction: column;
-}
-
-form {
-  width: 90%;
-  max-width: 600px;
   display: flex;
   flex-direction: column;
-  margin: 100px auto;
-  padding: 10px 20px;
-  background: #0000000e;
-  border-radius: 8px;
-}
-
-.results {
-  text-align: center !important;
-  margin-left: 0px !important;
-  width: 90%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background: #0000000e;
-  border-radius: 8px;
-}
-
-.conatiner {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
   align-items: center;
-}
-
-#avisos {
-  text-align: center;
-  width: 90%;
-  max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background: #0000000e;
-  border-radius: 8px;
-  transition: all 0.3s ease-in-out;
-}
-
-.pix {
-  width: 90%;
-  max-width: 300px;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  margin: 10px auto;
-  padding: 10px;
-  background-color: #f0f0f0;
-  border-radius: 8px;
+  min-height: 100vh;
 }
 
 .header {
-  position: relative;
-  top: 0;
-  display: flex;
-  justify-content: center;
   width: 100%;
-  height: auto;
-  align-content: center;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .header img {
-  padding: 1em;
   width: 150px;
-  height: auto;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .user img {
-  width: 60px;
-  height: auto;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
 }
 
-@media screen and (min-width: 480px) {
+form {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+input[type="text"], input[type="date"], select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+.radioDiv, .personType {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.personType button {
+  flex: 1;
+  padding: 10px;
+  background: #006ad0;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.personType .inactive {
+  background: #7b9bb7;
+}
+
+button {
+  padding: 15px;
+  background: #006ad0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #0051a3;
+}
+
+.results, .pix, #avisos {
+  width: 100%;
+  max-width: 600px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+  text-align: center;
+}
+
+.results img, .pix img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+#avisos p {
+  text-align: left;
+  line-height: 1.5;
+}
+
+#avisos a {
+  color: #006ad0;
+  text-decoration: none;
+}
+
+.pix button {
+  margin-top: 10px;
+}
+
+.pix h2 {
+  color: #006ad0;
+  margin-bottom: 10px;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+    display: block;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
   .header img {
-    width: 200px;
+    width: 120px;
   }
+
   .user img {
-    width: 100px;
+    width: 40px;
   }
-  .conatiner {
-    flex-direction: row;
-    justify-content: space-around;
+
+  form, .results, .pix, #avisos {
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
   }
-  form, .results {
-    max-width: 600px;
+
+  .personType {
+    flex-direction: column;
   }
-  #avisos {
-    height: 380px;
+
+  .radioDiv {
+    flex-direction: column;
   }
+
+  button {
+    width: 100%;
+  }
+}
+
+.hidden {
+  display: none !important;
 }

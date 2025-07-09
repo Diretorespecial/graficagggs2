@@ -99,11 +99,11 @@ $(document).ready(function () {
   
   $("#fisica").click(function () {
     $("#avisoP").html(
-      `
+      
       ● Procuração, Requisição e Declaração (ambos gerados aqui) assinados no <a href="https://gov.br" target="_blank">gov.br</a>  <br>
             ● CRM frente e verso.<br>
             ● Declaração ou comprovante de endereço de atendimento em nome do médico (a Secretaria de Saúde aceita apenas contas de água, luz ou telefone) com até 90 dias de emissão.</span> <br>
-      `
+      
     );
     
     $("#pjFields").fadeOut(300, function () {
@@ -119,12 +119,12 @@ $(document).ready(function () {
 
   $("#juridica").click(function () {
     $("#avisoP").html(
-      `
+      
       ● Procuração e Requisição (ambos gerados aqui) assinados no <a href="https://gov.br" target="_blank">gov.br</a>  <br>
       ● CRM frente e verso.<br>
       <b> ● Cartão CNPJ. -- adicional para pessoa jurídica<br> 
       ● Certificado de regularidade.  -- adicional para pessoa jurídica<br> </b>
-      `
+      
     );
     $("#pfFields").fadeOut(300, function () {
       $("#pjFields").fadeIn(300);
@@ -136,11 +136,6 @@ $(document).ready(function () {
     $("#fisica").addClass("inactive");
     $("#juridica").removeClass("inactive");
   });
-
-  // ... (restante do código permanece o mesmo)
-
-
-
 
   $("#generateDoc").click(function () {
     if (!checkimputs()) {
@@ -186,7 +181,7 @@ switch (docType) {
     break;
 }
 
-    let docPath = `assets/${docType}.png`;
+    let docPath = assets/${docType}.png;
 
     var nome,
       crm,
@@ -255,7 +250,7 @@ switch (docType) {
       cpf = "123.456.789-00";
       data = "2023-10-01";
       // docType = "tipo_amarelo";
-      docPath = `assets/${docType}.png`;
+      docPath = assets/${docType}.png;
     }
 
     let dataFormatada = new Date(data);
@@ -316,7 +311,7 @@ switch (docType) {
     };
 
 if (docType == "tipo_amarelo") {
-      let docPath2 = `assets/procuracao_a.png`;
+      let docPath2 = assets/procuracao_a.png;
 
       let canvas2 = document.createElement("canvas");
       let ctx2 = canvas2.getContext("2d");
@@ -371,7 +366,7 @@ if (docType == "tipo_amarelo") {
         preview2.src = imgData2;
       };
     } else {
-      let docPath2 = `assets/procuracao.png`;
+      let docPath2 = assets/procuracao.png;
 
       let canvas2 = document.createElement("canvas");
       let ctx2 = canvas2.getContext("2d");
@@ -425,7 +420,7 @@ if (docType == "tipo_amarelo") {
     }
 
 
-    let docPath3 = `assets/requisicao.png`;
+    let docPath3 = assets/requisicao.png;
 
     let canvas3 = document.createElement("canvas");
     let ctx3 = canvas3.getContext("2d");
@@ -513,7 +508,7 @@ if (docType == "tipo_amarelo") {
       let dia3 = dataFormatada3.getDate().toString().padStart(2, "0");
       let mes3 = dataFormatada3.toLocaleString("default", { month: "2-digit" });
       let ano3 = dataFormatada3.getFullYear();
-      let FormData = `${dia3}/${mes3}/${ano3}`;
+      let FormData = ${dia3}/${mes3}/${ano3};
 
       ctx3.fillText(FormData, 200, 2140);
       ctx3.font = "bold 25px Arial";
@@ -538,7 +533,7 @@ if (docType == "tipo_amarelo") {
       let preview3 = document.getElementById("preview3");
       preview3.src = imgData3;
     };
- let docPath4 = `assets/declaracao.png`;
+ let docPath4 = assets/declaracao.png;
 
 let canvas4 = document.createElement("canvas");
 let ctx4 = canvas4.getContext("2d");
@@ -562,7 +557,7 @@ img4.onload = function () {
   ctx4.fillText(especialidade, 200, 564);
 
   // Endereço comercial
-  let enderecoCompleto = `${endereco}, ${numero} - ${complemento} - ${bairro} - ${cidade} - ${cep}`;
+  let enderecoCompleto = ${endereco}, ${numero} - ${complemento} - ${bairro} - ${cidade} - ${cep};
   ctx4.font = "22px Arial";
   ctx4.fillText(enderecoCompleto, 152, 636);
 

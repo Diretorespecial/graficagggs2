@@ -28,7 +28,6 @@ function changeavisosheight() {
         $("#avisos").css("height", height + "px");
       }
     }
-
 }
 
 
@@ -81,29 +80,31 @@ $(document).ready(function () {
       alert("Pitx copiado para a área de transferência!");
     });
   });
-  $("#minimizar").click(function () {
-    if (isminimized) {
-      $("#avisos").removeClass("minimized");
-      $("#minimizar").removeClass("rotated");
-      $("#minimizar").addClass("rotated2");
-    } else {
-      $("#avisos").addClass("minimized");
-      $("#minimizar").removeClass("rotated2");
-      $("#minimizar").addClass("rotated");
-    }
-    isminimized = !isminimized;
-  });
+
+  // REMOVIDO: Botão de minimizar e evento
+  // $("#minimizar").click(function () {
+  //   if (isminimized) {
+  //     $("#avisos").removeClass("minimized");
+  //     $("#minimizar").removeClass("rotated");
+  //     $("#minimizar").addClass("rotated2");
+  //   } else {
+  //     $("#avisos").addClass("minimized");
+  //     $("#minimizar").removeClass("rotated2");
+  //     $("#minimizar").addClass("rotated");
+  //   }
+  //   isminimized = !isminimized;
+  // });
 
   $("#pjFields").hide();
 
   
   $("#fisica").click(function () {
     $("#avisoP").html(
-      
+      `
       ● Procuração, Requisição e Declaração (ambos gerados aqui) assinados no <a href="https://gov.br" target="_blank">gov.br</a>  <br>
             ● CRM frente e verso.<br>
             ● Declaração ou comprovante de endereço de atendimento em nome do médico (a Secretaria de Saúde aceita apenas contas de água, luz ou telefone) com até 90 dias de emissão.</span> <br>
-      
+      `
     );
     
     $("#pjFields").fadeOut(300, function () {
@@ -119,12 +120,12 @@ $(document).ready(function () {
 
   $("#juridica").click(function () {
     $("#avisoP").html(
-      
+      `
       ● Procuração e Requisição (ambos gerados aqui) assinados no <a href="https://gov.br" target="_blank">gov.br</a>  <br>
       ● CRM frente e verso.<br>
       <b> ● Cartão CNPJ. -- adicional para pessoa jurídica<br> 
       ● Certificado de regularidade.  -- adicional para pessoa jurídica<br> </b>
-      
+      `
     );
     $("#pfFields").fadeOut(300, function () {
       $("#pjFields").fadeIn(300);
@@ -154,33 +155,7 @@ $(document).ready(function () {
     $(".results").removeClass("hidden");
     $(".result").removeClass("hidden");
 
-    
     let docType = $("input[name='receituario']:checked").val();
-$("#requisicao").hide(); // Sempre esconde a Requisição inicialmente
-
-switch (docType) {
-  case "tipo_b2":
-    $("#requisicao").show();
-    ctx3.fillText("X", 172, 1463);
-    break;
-
-  case "tipo_b":
-    $("#requisicao").show();
-    ctx3.fillText("X", 172, 1328);
-    break;
-
-  case "retinoides":
-    $("#requisicao").show();
-    ctx3.fillText("X", 172, 1593);
-    break;
-
-  case "tipo_amarelo":
-    $("#qtd").val("1");
-    $("#valor").val("R$100,00");
-    $("#previa").removeClass("hidden").fadeIn(300);
-    break;
-}
-
     let docPath = assets/${docType}.png;
 
     var nome,

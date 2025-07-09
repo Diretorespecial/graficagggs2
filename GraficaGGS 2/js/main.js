@@ -137,6 +137,11 @@ $(document).ready(function () {
     $("#juridica").removeClass("inactive");
   });
 
+  // ... (restante do código permanece o mesmo)
+
+
+
+
   $("#generateDoc").click(function () {
     if (!checkimputs()) {
       return;
